@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "DrawDebugHelpers.h"
 #include "Character/AuraCharacterBase.h"
 #include "Interaction/EnemyInterface.h"
 #include "AuraEnemy.generated.h"
@@ -18,5 +19,8 @@ class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 public:
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bHighlighted = false;
 
 };
